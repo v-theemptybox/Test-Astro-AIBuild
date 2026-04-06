@@ -54,8 +54,28 @@ const { title, description } = Astro.props;
       .badge-pill { display: inline-flex; padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.88rem; background: #d1fae5; color: #065f46; }
       .divider { height: 1px; background: #e2e8f0; margin: 2rem 0; border: none; }
       code { background: #f8fafc; padding: 0.2rem 0.4rem; border-radius: 0.35rem; font-size: 0.95rem; }
+      .hero { display: grid; gap: 2rem; padding: 4rem 0 2rem; align-items: center; background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); border-radius: 0 0 50px 50px; margin-bottom: 4rem; }
+      .hero-content { max-width: 600px; }
+      .hero-image img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+      .services { padding: 4rem 0; background: white; }
+      .services h2 { text-align: center; margin-bottom: 1rem; }
+      .services-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 3rem; }
+      .service-card { background: #f8fafc; border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid #e2e8f0; transition: transform .3s ease, box-shadow .3s ease; }
+      .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+      .service-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 1.5rem; }
+      .service-card h3 { margin-bottom: 1rem; color: #1e293b; }
+      .why-choose { display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem 0; background: #f8fafc; }
+      .why-content h2 { margin-bottom: 2rem; }
+      .why-grid { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
+      .why-item { text-align: center; padding: 2rem; background: white; border-radius: 15px; border: 1px solid #e2e8f0; }
+      .why-icon { font-size: 3rem; margin-bottom: 1rem; }
+      .why-item h3 { margin-bottom: 1rem; color: #1e293b; }
+      .why-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+      .cta { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 4rem 0; text-align: center; border-radius: 50px 50px 0 0; margin-top: 4rem; }
+      .cta-content h2 { margin-bottom: 1rem; }
+      .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
       @media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr; align-items: center; } }
-      @media (max-width: 640px) { header { padding-top: 1.5rem; } .hero h1 { font-size: 2.5rem; } }
+      @media (max-width: 640px) { header { padding-top: 1.5rem; } .hero h1 { font-size: 2.5rem; } .why-choose { grid-template-columns: 1fr; } .services-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>

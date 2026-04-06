@@ -1,114 +1,92 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Vet AI Clinic | Trang web thú y AI-built" description="Trang web thú y được xây dựng bằng Astro, tối ưu hiệu năng và host miễn phí trên Cloudflare Pages.">
+<BaseLayout title="Vet AI Clinic | Phòng khám thú y hiện đại" description="Phòng khám thú y AI-built với dịch vụ chăm sóc chuyên nghiệp cho chó mèo. Đặt lịch online, tư vấn 24/7.">
+  <!-- Hero Section -->
   <section class="hero">
-    <div>
-      <p class="badge">Parallel Strategy: AI-Built Websites</p>
-      <h1>Phòng khám thú y hiện đại cho khách hàng mới, được xây dựng bằng Astro và host trên Cloudflare.</h1>
-      <p>Thiết kế website thú y nhanh chóng, bảo mật và tối ưu hiệu suất. Dự án AI-built giúp bạn tập trung vào chăm sóc vật nuôi thay vì vận hành hosting.</p>
+    <div class="hero-content">
+      <p class="badge">🏥 Phòng khám thú y hàng đầu</p>
+      <h1>Chăm sóc thú cưng của bạn với tình yêu và chuyên môn</h1>
+      <p>Chúng tôi cung cấp dịch vụ khám chữa bệnh, tiêm chủng và chăm sóc toàn diện cho chó mèo với công nghệ hiện đại và đội ngũ bác sĩ giàu kinh nghiệm.</p>
       <div class="hero-buttons">
-        <a class="button button-primary" href="#services">Dịch vụ</a>
-        <a class="button button-secondary" href="#strategy">Chiến lược AI</a>
+        <a class="button button-primary" href="#services">Đặt lịch khám</a>
+        <a class="button button-secondary" href="#about">Tìm hiểu thêm</a>
       </div>
     </div>
-    <div class="callout">
-      <h2>Trang web dành cho phòng khám thú y</h2>
-      <p>Gồm trang chủ, dịch vụ, đội ngũ, lịch khám và liên hệ. Tối ưu cho Cloudflare Pages để hoạt động với tốc độ cao và chi phí bằng 0.</p>
-      <div class="feature-grid">
-        <div class="card">
-          <h3>Nhanh như chớp</h3>
-          <p>Astro kết xuất tĩnh giúp website tải ngay lập tức và đạt điểm PageSpeed cao.</p>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop&crop=center" alt="Chó mèo vui vẻ tại phòng khám" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Dịch vụ của chúng tôi</h2>
+    <p class="section-sub">Đầy đủ các dịch vụ chăm sóc sức khỏe cho thú cưng</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop&crop=center" alt="Khám bệnh tổng quát" loading="lazy">
+        <h3>Khám bệnh tổng quát</h3>
+        <p>Kiểm tra sức khỏe định kỳ, phát hiện sớm bệnh tật cho thú cưng của bạn.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop&crop=center" alt="Tiêm chủng" loading="lazy">
+        <h3>Tiêm chủng & Phòng bệnh</h3>
+        <p>Vắc xin đầy đủ theo lịch, bảo vệ thú cưng khỏi các bệnh nguy hiểm.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=300&h=200&fit=crop&crop=center" alt="Phẫu thuật" loading="lazy">
+        <h3>Phẫu thuật & Cấp cứu</h3>
+        <p>Dịch vụ phẫu thuật chuyên nghiệp với trang thiết bị hiện đại.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300&h=200&fit=crop&crop=center" alt="Chăm sóc lông" loading="lazy">
+        <h3>Chăm sóc & Làm đẹp</h3>
+        <p>Tắm rửa, cắt tỉa lông, chăm sóc da cho chó mèo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <div class="why-content">
+      <h2>Tại sao chọn Vet AI Clinic?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">👨‍⚕️</div>
+          <h3>Bác sĩ chuyên nghiệp</h3>
+          <p>Đội ngũ bác sĩ thú y giàu kinh nghiệm, được đào tạo chuyên sâu.</p>
         </div>
-        <div class="card">
-          <h3>An toàn</h3>
-          <p>Không có server PHP, không có cơ sở dữ liệu trực tiếp. Giảm rủi ro bị hack.</p>
+        <div class="why-item">
+          <div class="why-icon">🩺</div>
+          <h3>Trang thiết bị hiện đại</h3>
+          <p>Máy móc, dụng cụ y tế nhập khẩu, đảm bảo chuẩn đoán chính xác.</p>
         </div>
-        <div class="card">
-          <h3>Miễn phí hosting</h3>
-          <p>Cloudflare Pages cho phép host tĩnh với băng thông miễn phí và CDN toàn cầu.</p>
+        <div class="why-item">
+          <div class="why-icon">❤️</div>
+          <h3>Tình yêu động vật</h3>
+          <p>Chúng tôi yêu thú cưng và cam kết chăm sóc chúng như thành viên gia đình.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📞</div>
+          <h3>Hỗ trợ 24/7</h3>
+          <p>Tư vấn khẩn cấp và chăm sóc liên tục cho thú cưng của bạn.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="services">
-    <h2 class="section-title">Dịch vụ dành cho phòng khám thú y</h2>
-    <p class="section-sub">Trang web được cấu trúc để giới thiệu đầy đủ các gói chăm sóc và gia tăng khách hàng mới.</p>
-    <div class="grid-2">
-      <div class="card feature">
-        <h3>Khám bệnh & Tiêm chủng</h3>
-        <p>Trình bày rõ ràng các dịch vụ khám thú y, tiêm chủng, tẩy giun và tư vấn sức khỏe vật nuôi.</p>
-      </div>
-      <div class="card feature">
-        <h3>Chăm sóc cấp cứu</h3>
-        <p>Thông tin liên hệ nhanh, giờ làm việc, vị trí để khách hàng dễ dàng tìm đến khi cần cấp cứu.</p>
-      </div>
-      <div class="card feature">
-        <h3>Dịch vụ làm đẹp</h3>
-        <p>Giải pháp tắm, cắt tỉa lông và chăm sóc móng cho chó mèo, với hình ảnh thân thiện và tin cậy.</p>
-      </div>
-      <div class="card feature">
-        <h3>Gói dịch vụ theo dõi</h3>
-        <p>Cho phép khách hàng đăng ký gói định kỳ và nhận nhắc lịch tiêm, khám sức khỏe định kỳ.</p>
-      </div>
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=600&fit=crop&crop=center" alt="Bác sĩ thú y chăm sóc chó" loading="lazy">
     </div>
   </section>
 
-  <section id="strategy">
-    <h2 class="section-title">Chiến lược AI-built cho khách hàng mới</h2>
-    <p class="section-sub">Một hướng đi mới cho website phòng khám thú y: nhanh, an toàn, không tốn hosting.</p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Thiết kế bằng AI</h3>
-        <p>Sử dụng AI để sinh nội dung nhanh, bản đồ hiện đại và hình ảnh phù hợp với phòng khám thú y.</p>
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Sẵn sàng chăm sóc thú cưng của bạn?</h2>
+      <p>Liên hệ ngay để đặt lịch khám hoặc nhận tư vấn miễn phí.</p>
+      <div class="cta-buttons">
+        <a class="button button-primary" href="/contact">Liên hệ ngay</a>
+        <a class="button button-secondary" href="tel:0900123456">Gọi hotline</a>
       </div>
-      <div class="card">
-        <h3>Triển khai trên Cloudflare</h3>
-        <p>Website tĩnh được đẩy lên Cloudflare Pages, CDN toàn cầu và HTTPS tự động.</p>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Ưu điểm</h3>
-      <ul class="info-list">
-        <li>Chi phí hosting = 0</li>
-        <li>Tốc độ tải trang tối ưu cho khách hàng và SEO</li>
-        <li>Không cần quản lý server hoặc cập nhật hệ thống</li>
-        <li>Dễ mở rộng khi tăng số lượng khách hàng mới</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">Chúng tôi xây dựng gì cho bạn?</h2>
-    <p class="section-sub">Một website phòng khám thú y chuẩn AI-built sẽ bao gồm các phần chính dưới đây.</p>
-    <div class="feature-grid">
-      <div class="card">
-        <h3>Trang chủ chuyên nghiệp</h3>
-        <p>Tiếp cận ngay khách hàng mới với thông điệp "Chăm sóc thú cưng tận tâm".</p>
-      </div>
-      <div class="card">
-        <h3>Chi tiết dịch vụ</h3>
-        <p>Giới thiệu rõ ràng từng gói khám, tiêm chủng và dịch vụ thú y.</p>
-      </div>
-      <div class="card">
-        <h3>Đội ngũ bác sĩ</h3>
-        <p>Thể hiện uy tín với hồ sơ bác sĩ thú y và hình ảnh thân thiện.</p>
-      </div>
-      <div class="card">
-        <h3>Liên hệ & Đặt lịch</h3>
-        <p>Form liên hệ, bản đồ và thông tin gọi điện / nhắn tin nhanh.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <section>
-    <div class="card">
-      <h2>Triển khai Cloudflare Pages</h2>
-      <p>Build bằng `npm run build` và publish thư mục <code>dist</code>. Cloudflare Pages sẽ tự động phân phối website tĩnh toàn cầu.</p>
-      <p class="badge-pill">Hoàn thiện cho website thú y, khách hàng mới, chi phí 0.</p>
     </div>
   </section>
 </BaseLayout>
