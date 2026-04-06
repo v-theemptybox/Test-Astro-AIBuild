@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="CloudCannon CMS" description="Sử dụng CloudCannon để quản lý nội dung cho website Astro này.">
+  <section>
+    <p class="badge">CloudCannon</p>
+    <h1>Quản lý nội dung bằng CloudCannon</h1>
+    <p class="section-sub">Website đã chuyển sang CloudCannon. Bạn chỉ cần kết nối GitHub repo và chỉnh nội dung trực tiếp từ CloudCannon.</p>
+    <div class="grid-2">
+      <div class="card feature">
+        <h2>Thiết lập nhanh</h2>
+        <ol>
+          <li>Đăng nhập vào <a href="https://app.cloudcannon.com/">CloudCannon</a>.</li>
+          <li>Kết nối repo GitHub này.</li>
+          <li>Chọn build command <code>npm run build</code> và publish directory <code>dist</code>.</li>
+          <li>Chỉnh nội dung trong file <code>src/data/site-content.json</code>.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h2>Ghi chú</h2>
+        <p>Nội dung chính của trang được lưu trong <code>src/data/site-content.json</code> để CloudCannon có thể quản lý dễ dàng và không cần setup backend phức tạp.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

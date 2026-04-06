@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/site-content.json';
+const { title, description, heading, subtitle } = content.about;
 ---
-<BaseLayout title="Giới thiệu | Vet AI Clinic" description="Chiến lược AI-built website cho phòng khám thú y và lợi ích khi deploy trên Cloudflare Pages.">
+<BaseLayout title={title} description={description}>
   <section>
     <p class="badge">AI-Built Veterinary Websites</p>
-    <h1>Giới thiệu về chiến lược website AI-built cho phòng khám thú y</h1>
-    <p class="section-sub">Một cách tiếp cận mới giúp giảm chi phí hosting, tăng tốc độ và nâng cao trải nghiệm khách hàng.</p>
+    <h1>{heading}</h1>
+    <p class="section-sub">{subtitle}</p>
     <div class="grid-2">
       <div class="card">
         <h2>AI thiết kế nhanh</h2>

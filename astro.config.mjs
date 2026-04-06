@@ -10,5 +10,5 @@ export default defineConfig({
     syntaxHighlight: "shiki",
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare(),
 });

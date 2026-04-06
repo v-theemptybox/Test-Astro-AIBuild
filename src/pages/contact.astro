@@ -1,17 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/site-content.json';
+const { title, description, heading, subtitle, email, phone, address, formAction } = content.contact;
 ---
-<BaseLayout title="Liên hệ | Vet AI Clinic" description="Liên hệ với Vet AI để triển khai website phòng khám thú y AI-built và host miễn phí trên Cloudflare.">
+<BaseLayout title={title} description={description}>
   <section>
     <p class="badge">Liên hệ</p>
-    <h1>Liên hệ với Vet AI Clinic</h1>
-    <p class="section-sub">Gửi yêu cầu, đặt lịch tư vấn giải pháp website phòng khám thú y AI-built và triển khai Cloudflare Pages.</p>
+    <h1>{heading}</h1>
+    <p class="section-sub">{subtitle}</p>
     <div class="grid-2">
       <div class="card feature">
         <h2>Thông tin liên hệ</h2>
-        <p>Email: <a href="mailto:hello@vetai.example">hello@vetai.example</a></p>
-        <p>Phone: <strong>0900 123 456</strong></p>
-        <p>Địa chỉ: 123 Đường Thú Y, Quận 1, TP. Hồ Chí Minh</p>
+        <p>Email: <a href={"mailto:" + email}>{email}</a></p>
+        <p>Phone: <strong>{phone}</strong></p>
+        <p>Địa chỉ: {address}</p>
       </div>
       <div class="card feature">
         <h2>Yêu cầu nhanh</h2>
@@ -25,7 +27,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <div class="card">
       <h3>Gửi yêu cầu của bạn</h3>
-      <form action="https://formspree.io/f/mvzvdyag" method="POST">
+      <form action={formAction} method="POST">
         <div class="form-group">
           <label for="name">Họ tên</label>
           <input type="text" id="name" name="name" required>

@@ -1,16 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/site-content.json';
+const { title, description, heroTitle, heroDescription, heroPrimary, heroSecondary } = content.home;
 ---
-<BaseLayout title="Vet AI Clinic | Phòng khám thú y hiện đại" description="Phòng khám thú y AI-built với dịch vụ chăm sóc chuyên nghiệp cho chó mèo. Đặt lịch online, tư vấn 24/7.">
+<BaseLayout title={title} description={description}>
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <p class="badge">🏥 Phòng khám thú y hàng đầu</p>
-      <h1>Chăm sóc thú cưng của bạn với tình yêu và chuyên môn</h1>
-      <p>Chúng tôi cung cấp dịch vụ khám chữa bệnh, tiêm chủng và chăm sóc toàn diện cho chó mèo với công nghệ hiện đại và đội ngũ bác sĩ giàu kinh nghiệm.</p>
+      <h1>{heroTitle}</h1>
+      <p>{heroDescription}</p>
       <div class="hero-buttons">
-        <a class="button button-primary" href="#services">Đặt lịch khám</a>
-        <a class="button button-secondary" href="#about">Tìm hiểu thêm</a>
+        <a class="button button-primary" href="#services">{heroPrimary}</a>
+        <a class="button button-secondary" href="#about">{heroSecondary}</a>
       </div>
     </div>
     <div class="hero-image">
