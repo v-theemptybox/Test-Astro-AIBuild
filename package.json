@@ -21,6 +21,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "rollup": "^4.0.0",
     "wrangler": "^4.80.0"
   }
 }
