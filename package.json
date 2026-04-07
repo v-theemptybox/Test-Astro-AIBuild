@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "npm install --include=optional --ignore-scripts",
     "build": "astro build",
     "preview": "npm run build && wrangler dev --config dist/server/wrangler.json",
     "deploy": "npm run build && wrangler deploy --config dist/server/wrangler.json",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.7",
     "@astrojs/react": "^5.0.0",
+    "@emdash-cms/cloudflare": "^0.1.0",
     "@tanstack/react-query": "^5.0.0",
     "@tanstack/react-router": "^1.100.0",
     "astro": "^6.1.4",
