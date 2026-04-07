@@ -1,6 +1,0 @@
-{
-  "name": "Vet AI Website",
-  "build_command": "npm run build",
-  "publish_directory": "dist",
-  "ignore_files": ["node_modules", ".git"]
-}

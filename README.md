@@ -12,10 +12,10 @@ Trang web thú y này được xây dựng bằng Astro và thiết kế để d
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-## CloudCannon CMS
+## Cloudflare Emdash CMS
 
-- Đã chuyển sang CloudCannon để quản lý nội dung.
-- Sử dụng file `cloudcannon.json` để cấu hình build.
+- Đã chuyển sang Cloudflare Emdash để quản lý nội dung.
+- Sử dụng Cloudflare Emdash để kết nối repo và thiết lập build command.
 - Nội dung có thể chỉnh sửa trong `src/data/site-content.json`.
 
 ## Các trang đã tạo
