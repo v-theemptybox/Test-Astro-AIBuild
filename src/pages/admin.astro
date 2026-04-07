@@ -1,25 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Cloudflare Emdash CMS" description="Sử dụng Cloudflare Emdash để quản lý nội dung cho website Astro này.">
+<BaseLayout title="Cloudflare Emdash Admin" description="Truy cập giao diện quản trị Emdash cho website này.">
+  <head>
+    <meta http-equiv="refresh" content="0;url=/_emdash/admin" />
+  </head>
   <section>
-    <p class="badge">Cloudflare Emdash</p>
-    <h1>Quản lý nội dung bằng Cloudflare Emdash</h1>
-    <p class="section-sub">Website đã chuyển sang Cloudflare Emdash. Bạn chỉ cần kết nối repo GitHub và chỉnh nội dung trực tiếp từ Emdash.</p>
-    <div class="grid-2">
-      <div class="card feature">
-        <h2>Thiết lập nhanh</h2>
-        <ol>
-          <li>Đăng nhập vào Cloudflare và mở Emdash cho repo này.</li>
-          <li>Kết nối repository GitHub hiện tại.</li>
-          <li>Chọn build command <code>npm run build</code> và publish directory <code>dist</code>.</li>
-          <li>Chỉnh nội dung trong file <code>src/data/site-content.json</code>.</li>
-        </ol>
-      </div>
-      <div class="card">
-        <h2>Ghi chú</h2>
-        <p>Nội dung chính của trang được lưu trong <code>src/data/site-content.json</code>, giúp Emdash quản lý nhẹ nhàng mà không cần backend CMS phức tạp.</p>
-      </div>
+    <p class="badge">Emdash CMS</p>
+    <h1>Truy cập quản trị Emdash</h1>
+    <p class="section-sub">Bạn sẽ được chuyển ngay tới giao diện admin của Emdash. Nếu không tự động chuyển, nhấn vào nút bên dưới.</p>
+    <div class="card feature">
+      <h2>Đi tới Emdash Admin</h2>
+      <a class="button button-primary" href="/_emdash/admin">Mở Emdash Admin</a>
+      <p>Nếu cần, hãy đăng nhập bằng tài khoản quản trị được cấu hình trong Emdash.</p>
+    </div>
+    <div class="card">
+      <h2>Ghi chú</h2>
+      <p>Emdash sử dụng SQLite cục bộ trong dev. Với Cloudflare triển khai, bạn sẽ cần cấu hình D1 và R2 để lưu dữ liệu và media.</p>
     </div>
   </section>
 </BaseLayout>

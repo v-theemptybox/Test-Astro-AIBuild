@@ -15,8 +15,10 @@ Trang web thú y này được xây dựng bằng Astro và thiết kế để d
 ## Cloudflare Emdash CMS
 
 - Đã chuyển sang Cloudflare Emdash để quản lý nội dung.
-- Sử dụng Cloudflare Emdash để kết nối repo và thiết lập build command.
+- Kết nối Emdash bằng Cloudflare, build command: `npm run build`, publish directory: `dist`.
 - Nội dung có thể chỉnh sửa trong `src/data/site-content.json`.
+- Truy cập admin qua `/admin`, page sẽ tự động chuyển tới `/_emdash/admin`.
+- Deployment Cloudflare dùng config được tạo tại `dist/server/wrangler.json`.
 
 ## Các trang đã tạo
 
