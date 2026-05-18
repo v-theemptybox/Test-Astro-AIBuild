@@ -4,49 +4,418 @@ import content from '../data/site-content.json';
 const { title, description, heading, subtitle, email, phone, address, formAction } = content.contact;
 ---
 <BaseLayout title={title} description={description}>
-  <section>
-    <p class="badge">Liên hệ</p>
-    <h1>{heading}</h1>
-    <p class="section-sub">{subtitle}</p>
-    <div class="grid-2">
-      <div class="card feature">
-        <h2>Thông tin liên hệ</h2>
-        <p>Email: <a href={"mailto:" + email}>{email}</a></p>
-        <p>Phone: <strong>{phone}</strong></p>
-        <p>Địa chỉ: {address}</p>
-      </div>
-      <div class="card feature">
-        <h2>Yêu cầu nhanh</h2>
-        <p>Thích hợp cho:</p>
-        <ul class="info-list">
-          <li>Phòng khám mới cần website giới thiệu</li>
-          <li>Dịch vụ chăm sóc thú cưng muốn quảng bá trực tuyến</li>
-          <li>Khách hàng cần website tốc độ cao, an toàn và dễ mở rộng</li>
-        </ul>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Gửi yêu cầu của bạn</h3>
-      <form action={formAction} method="POST">
-        <div class="form-group">
-          <label for="name">Họ tên</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Số điện thoại</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Nội dung yêu cầu</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="button button-primary">Gửi yêu cầu</button>
-      </form>
-      <p class="source-note">Form được gửi qua Formspree. Thay 'your-form-id' bằng ID thực từ Formspree.</p>
+
+  <!-- Page Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="tag">Liên hệ</div>
+      <h1>{heading}</h1>
+      <p>{subtitle}</p>
     </div>
   </section>
+
+  <section class="contact-body">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info">
+          <h2>Thông tin liên hệ</h2>
+          <p class="info-intro">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn. Liên hệ qua bất kỳ kênh nào dưới đây.</p>
+
+          <div class="info-items">
+            <a href={"tel:" + phone.replace(/\s/g, '')} class="info-item info-item--link">
+              <div class="info-icon">📞</div>
+              <div>
+                <span>Điện thoại</span>
+                <strong>{phone}</strong>
+              </div>
+              <div class="info-arrow">→</div>
+            </a>
+            <a href={"mailto:" + email} class="info-item info-item--link">
+              <div class="info-icon">✉️</div>
+              <div>
+                <span>Email</span>
+                <strong>{email}</strong>
+              </div>
+              <div class="info-arrow">→</div>
+            </a>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <span>Địa chỉ</span>
+                <strong>{address}</strong>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">⏰</div>
+              <div>
+                <span>Giờ làm việc</span>
+                <strong>Thứ 2 – Thứ 7: 8:00 – 20:00</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-box">
+            <h3>Chúng tôi có thể giúp gì?</h3>
+            <ul class="quick-list">
+              <li>Phòng khám mới cần website giới thiệu dịch vụ</li>
+              <li>Dịch vụ thú cưng muốn quảng bá trực tuyến</li>
+              <li>Nâng cấp website WordPress hiện tại</li>
+              <li>Tư vấn giải pháp hosting Cloudflare miễn phí</li>
+            </ul>
+          </div>
+
+          <div class="emergency-box">
+            <span>🚨 Cấp cứu thú cưng 24/7</span>
+            <a href={"tel:" + phone.replace(/\s/g, '')}>{phone}</a>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Gửi yêu cầu</h2>
+            <p>Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại trong vòng 24 giờ.</p>
+          </div>
+          <form action={formAction} method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Họ và tên <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required />
+              </div>
+              <div class="form-group">
+                <label for="phone-field">Số điện thoại <span class="req">*</span></label>
+                <input type="tel" id="phone-field" name="phone" placeholder="0900 123 456" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email-field">Email <span class="req">*</span></label>
+              <input type="email" id="email-field" name="email" placeholder="example@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Dịch vụ quan tâm</label>
+              <select id="service" name="service">
+                <option value="">— Chọn dịch vụ —</option>
+                <option value="kham-tong-quat">Khám bệnh tổng quát</option>
+                <option value="tiem-chung">Tiêm chủng & Phòng bệnh</option>
+                <option value="phau-thuat">Phẫu thuật & Cấp cứu</option>
+                <option value="cham-soc">Chăm sóc & Làm đẹp</option>
+                <option value="tu-van-website">Tư vấn website AI-built</option>
+                <option value="khac">Khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Nội dung yêu cầu <span class="req">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Mô tả tình trạng thú cưng, dịch vụ cần tư vấn hoặc câu hỏi của bạn..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">
+              Gửi yêu cầu →
+            </button>
+            <p class="form-note">* Thông tin bắt buộc. Chúng tôi không chia sẻ thông tin của bạn cho bên thứ ba.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  .contact-hero {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 60%, #ecfdf5 100%);
+    padding: 5.5rem 0 4.5rem;
+    text-align: center;
+  }
+
+  .contact-hero .tag { margin: 0 auto 1.5rem; }
+
+  .contact-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 640px;
+    margin: 0 auto 1rem;
+    color: #0f172a;
+  }
+
+  .contact-hero p {
+    font-size: 1.05rem;
+    color: #475569;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .contact-body {
+    padding: 5.5rem 0 7rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.65fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Info side */
+  .contact-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-intro {
+    color: #64748b;
+    font-size: 0.925rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .info-item--link {
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .info-item--link:hover {
+    border-color: #a7f3d0;
+    background: #ecfdf5;
+  }
+
+  .info-icon {
+    width: 42px;
+    height: 42px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .info-item > div:nth-child(2) { flex: 1; }
+
+  .info-item span {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 0.1rem;
+  }
+
+  .info-item strong {
+    font-size: 0.875rem;
+    color: #1e293b;
+    font-weight: 600;
+  }
+
+  .info-arrow {
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.15s;
+  }
+
+  .info-item--link:hover .info-arrow {
+    transform: translateX(3px);
+    color: #059669;
+  }
+
+  .quick-box {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .quick-box h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+    color: #1e293b;
+  }
+
+  .quick-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .quick-list li {
+    font-size: 0.875rem;
+    color: #64748b;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .quick-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-weight: 700;
+    font-size: 0.8rem;
+    top: 1px;
+  }
+
+  .emergency-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .emergency-box span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #dc2626;
+  }
+
+  .emergency-box a {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #dc2626;
+    text-decoration: none;
+  }
+
+  .emergency-box a:hover { text-decoration: underline; }
+
+  /* Form card */
+  .form-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  .form-card-header {
+    padding: 2rem 2.25rem 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .form-card-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-card-header p {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+
+  .contact-form {
+    padding: 0 2.25rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .req { color: #dc2626; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.925rem;
+    font-family: inherit;
+    color: #1e293b;
+    background: #fafafa;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    outline: none;
+    appearance: auto;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #059669;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: #94a3b8; }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.95rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 0.25rem;
+  }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-card-header { padding: 1.5rem 1.5rem 0; }
+    .contact-form { padding: 0 1.5rem 1.75rem; }
+    .contact-body { padding: 3.5rem 0 5rem; }
+  }
+</style>

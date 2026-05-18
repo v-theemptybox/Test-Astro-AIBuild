@@ -4,91 +4,665 @@ import content from '../data/site-content.json';
 const { title, description, heroTitle, heroDescription, heroPrimary, heroSecondary } = content.home;
 ---
 <BaseLayout title={title} description={description}>
-  <!-- Hero Section -->
+
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="badge">🏥 Phòng khám thú y hàng đầu</p>
-      <h1>{heroTitle}</h1>
-      <p>{heroDescription}</p>
-      <div class="hero-buttons">
-        <a class="button button-primary" href="#services">{heroPrimary}</a>
-        <a class="button button-secondary" href="#about">{heroSecondary}</a>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="tag">🏥 Phòng khám thú y hàng đầu TP.HCM</div>
+          <h1>{heroTitle}</h1>
+          <p>{heroDescription}</p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary">{heroPrimary} →</a>
+            <a href="/#services" class="btn btn-outline">{heroSecondary}</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <strong>10+</strong>
+              <span>Năm kinh nghiệm</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <strong>5,000+</strong>
+              <span>Thú cưng được chăm sóc</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <strong>4.9 ★</strong>
+              <span>Đánh giá trung bình</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&h=600&fit=crop&crop=center"
+            alt="Bác sĩ thú y chăm sóc thú cưng"
+            loading="eager"
+          />
+          <div class="hero-badge-float">
+            <span class="badge-check">✓</span>
+            <div>
+              <strong>Cấp cứu 24/7</strong>
+              <span>Luôn sẵn sàng hỗ trợ</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop&crop=center" alt="Chó mèo vui vẻ tại phòng khám" loading="lazy">
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Dịch vụ của chúng tôi</h2>
-    <p class="section-sub">Đầy đủ các dịch vụ chăm sóc sức khỏe cho thú cưng</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop&crop=center" alt="Khám bệnh tổng quát" loading="lazy">
-        <h3>Khám bệnh tổng quát</h3>
-        <p>Kiểm tra sức khỏe định kỳ, phát hiện sớm bệnh tật cho thú cưng của bạn.</p>
+  <!-- Services -->
+  <section id="services" class="section-services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Dịch vụ</span>
+        <h2>Chăm sóc toàn diện cho thú cưng</h2>
+        <p>Đội ngũ bác sĩ thú y chuyên nghiệp với đầy đủ dịch vụ y tế hiện đại</p>
       </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop&crop=center" alt="Tiêm chủng" loading="lazy">
-        <h3>Tiêm chủng & Phòng bệnh</h3>
-        <p>Vắc xin đầy đủ theo lịch, bảo vệ thú cưng khỏi các bệnh nguy hiểm.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=300&h=200&fit=crop&crop=center" alt="Phẫu thuật" loading="lazy">
-        <h3>Phẫu thuật & Cấp cứu</h3>
-        <p>Dịch vụ phẫu thuật chuyên nghiệp với trang thiết bị hiện đại.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300&h=200&fit=crop&crop=center" alt="Chăm sóc lông" loading="lazy">
-        <h3>Chăm sóc & Làm đẹp</h3>
-        <p>Tắm rửa, cắt tỉa lông, chăm sóc da cho chó mèo.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-badge">🔬</div>
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=220&fit=crop" alt="Khám bệnh tổng quát" loading="lazy" />
+          <div class="service-body">
+            <h3>Khám bệnh tổng quát</h3>
+            <p>Kiểm tra sức khỏe định kỳ, phát hiện sớm bệnh tật và lập kế hoạch chăm sóc dài hạn.</p>
+            <a href="/contact" class="service-link">Đặt lịch →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-badge">💉</div>
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=220&fit=crop" alt="Tiêm chủng" loading="lazy" />
+          <div class="service-body">
+            <h3>Tiêm chủng & Phòng bệnh</h3>
+            <p>Chương trình vắc xin đầy đủ theo lịch, bảo vệ thú cưng khỏi các bệnh nguy hiểm.</p>
+            <a href="/contact" class="service-link">Đặt lịch →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-badge">🏥</div>
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=220&fit=crop" alt="Phẫu thuật" loading="lazy" />
+          <div class="service-body">
+            <h3>Phẫu thuật & Cấp cứu</h3>
+            <p>Phẫu thuật chuyên nghiệp với trang thiết bị hiện đại. Cấp cứu 24/7 sẵn sàng hỗ trợ.</p>
+            <a href="/contact" class="service-link">Đặt lịch →</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-badge">✂️</div>
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=220&fit=crop" alt="Chăm sóc làm đẹp" loading="lazy" />
+          <div class="service-body">
+            <h3>Chăm sóc & Làm đẹp</h3>
+            <p>Dịch vụ tắm rửa, cắt tỉa lông chuyên nghiệp giúp thú cưng luôn sạch và khoẻ mạnh.</p>
+            <a href="/contact" class="service-link">Đặt lịch →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="why-choose">
-    <div class="why-content">
-      <h2>Tại sao chọn Vet AI Clinic?</h2>
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-icon">👨‍⚕️</div>
-          <h3>Bác sĩ chuyên nghiệp</h3>
-          <p>Đội ngũ bác sĩ thú y giàu kinh nghiệm, được đào tạo chuyên sâu.</p>
+  <!-- Why Us -->
+  <section id="why" class="section-why">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-image-wrap">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=700&fit=crop&crop=center" alt="Bác sĩ và thú cưng" loading="lazy" />
+          <div class="why-stat-card">
+            <strong>98%</strong>
+            <span>Khách hàng hài lòng</span>
+          </div>
         </div>
-        <div class="why-item">
-          <div class="why-icon">🩺</div>
-          <h3>Trang thiết bị hiện đại</h3>
-          <p>Máy móc, dụng cụ y tế nhập khẩu, đảm bảo chuẩn đoán chính xác.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">❤️</div>
-          <h3>Tình yêu động vật</h3>
-          <p>Chúng tôi yêu thú cưng và cam kết chăm sóc chúng như thành viên gia đình.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">📞</div>
-          <h3>Hỗ trợ 24/7</h3>
-          <p>Tư vấn khẩn cấp và chăm sóc liên tục cho thú cưng của bạn.</p>
+        <div class="why-content">
+          <span class="section-label">Tại sao chọn chúng tôi</span>
+          <h2>Chúng tôi đặt sức khỏe thú cưng lên hàng đầu</h2>
+          <p class="why-desc">Không chỉ là nơi chữa bệnh — Vet AI Clinic là nơi thú cưng được yêu thương và chăm sóc như thành viên gia đình.</p>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="wf-icon">👨‍⚕️</div>
+              <div>
+                <h4>Đội ngũ bác sĩ chuyên nghiệp</h4>
+                <p>Bác sĩ thú y được đào tạo chuyên sâu với nhiều năm kinh nghiệm thực tiễn trong nước và quốc tế.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="wf-icon">🩺</div>
+              <div>
+                <h4>Trang thiết bị hiện đại</h4>
+                <p>Máy chẩn đoán hình ảnh, xét nghiệm tại chỗ giúp cho kết quả nhanh và chính xác.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="wf-icon">💊</div>
+              <div>
+                <h4>Thuốc & vật tư chuẩn nhập khẩu</h4>
+                <p>Sử dụng thuốc và vật tư y tế nhập khẩu chính hãng, đảm bảo an toàn và hiệu quả.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="wf-icon">📞</div>
+              <div>
+                <h4>Hỗ trợ khẩn cấp 24/7</h4>
+                <p>Đường dây tư vấn khẩn cấp luôn mở, sẵn sàng hỗ trợ bất kể giờ nào trong ngày.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="why-image">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=600&fit=crop&crop=center" alt="Bác sĩ thú y chăm sóc chó" loading="lazy">
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Sẵn sàng chăm sóc thú cưng của bạn?</h2>
-      <p>Liên hệ ngay để đặt lịch khám hoặc nhận tư vấn miễn phí.</p>
-      <div class="cta-buttons">
-        <a class="button button-primary" href="/contact">Liên hệ ngay</a>
-        <a class="button button-secondary" href="tel:0900123456">Gọi hotline</a>
+  <!-- Testimonials -->
+  <section id="testimonials" class="section-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Đánh giá</span>
+        <h2>Khách hàng nói gì về chúng tôi</h2>
+        <p>Hơn 5,000 khách hàng đã tin tưởng Vet AI Clinic chăm sóc thú cưng</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Bác sĩ rất tận tâm và chuyên nghiệp. Bé mèo nhà mình đã hồi phục hoàn toàn sau ca phẫu thuật. Cảm ơn đội ngũ Vet AI Clinic rất nhiều!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LA</div>
+            <div>
+              <strong>Trần Lan Anh</strong>
+              <span>Chủ nuôi mèo Persian</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Phòng khám sạch sẽ, hiện đại. Nhân viên thân thiện và tận tình. Mình sẽ luôn đưa bé chó đến đây khám định kỳ hàng tháng."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MH</div>
+            <div>
+              <strong>Nguyễn Minh Hoàng</strong>
+              <span>Chủ nuôi chó Golden</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Dịch vụ tắm và làm đẹp cực kỳ tốt! Bé corgi trông như mới sau mỗi lần đến. Giá cả rất hợp lý so với chất lượng dịch vụ nhận được."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">BN</div>
+            <div>
+              <strong>Phạm Bảo Ngọc</strong>
+              <span>Chủ nuôi chó Corgi</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Đặt lịch khám ngay hôm nay</h2>
+          <p>Liên hệ với chúng tôi để nhận tư vấn miễn phí và đặt lịch khám cho thú cưng của bạn.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-white">Đặt lịch ngay →</a>
+          <a href="tel:0900123456" class="btn cta-phone">📞 0900 123 456</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #ecfdf5 100%);
+    padding: 5rem 0 6rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    color: #0f172a;
+  }
+
+  .hero-text > p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.25rem;
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid #bbf7d0;
+    margin-top: 0.25rem;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .trust-item strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #059669;
+    line-height: 1;
+  }
+
+  .trust-item span {
+    font-size: 0.775rem;
+    color: #64748b;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 36px;
+    background: #bbf7d0;
+    flex-shrink: 0;
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.14);
+    aspect-ratio: 7 / 6;
+    object-fit: cover;
+  }
+
+  .hero-badge-float {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    background: white;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e2e8f0;
+  }
+
+  .badge-check {
+    width: 36px;
+    height: 36px;
+    background: #059669;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .hero-badge-float strong {
+    display: block;
+    font-size: 0.875rem;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+
+  .hero-badge-float span {
+    font-size: 0.775rem;
+    color: #64748b;
+  }
+
+  /* Shared section header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .section-header p {
+    color: #64748b;
+    font-size: 1.025rem;
+    max-width: 540px;
+  }
+
+  /* Services */
+  .section-services {
+    padding: 6rem 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+  }
+
+  .service-icon-badge {
+    position: absolute;
+    top: 150px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+
+  .service-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .service-body h3 {
+    font-size: 1.025rem;
+    margin-bottom: 0.6rem;
+    color: #1e293b;
+  }
+
+  .service-body p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .service-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #059669;
+    text-decoration: none;
+    transition: gap 0.15s;
+  }
+
+  .service-link:hover { text-decoration: underline; }
+
+  /* Why Us */
+  .section-why {
+    background: #f8fafc;
+    padding: 6rem 0;
+  }
+
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-image-wrap {
+    position: relative;
+  }
+
+  .why-image-wrap img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+  }
+
+  .why-stat-card {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+    background: #059669;
+    color: white;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(5, 150, 105, 0.4);
+  }
+
+  .why-stat-card strong {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .why-stat-card span {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+
+  .why-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .why-content h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); }
+
+  .why-desc {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .why-feature {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .wf-icon {
+    width: 44px;
+    height: 44px;
+    background: #ecfdf5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .why-feature h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #1e293b;
+  }
+
+  .why-feature p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  /* Testimonials */
+  .section-testimonials {
+    padding: 6rem 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testi-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .testi-stars {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testi-card > p {
+    font-size: 0.925rem;
+    color: #475569;
+    line-height: 1.75;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .testi-avatar {
+    width: 40px;
+    height: 40px;
+    background: #d1fae5;
+    color: #059669;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .testi-author strong {
+    display: block;
+    font-size: 0.9rem;
+    color: #1e293b;
+  }
+
+  .testi-author span {
+    font-size: 0.78rem;
+    color: #94a3b8;
+  }
+
+  /* CTA */
+  .section-cta {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    padding: 5.5rem 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .cta-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  .cta-phone {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+  }
+
+  .cta-phone:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 3.5rem 0 5rem; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .why-inner { grid-template-columns: 1fr; }
+    .why-image-wrap { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-actions { justify-content: center; }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .section-services, .section-why, .section-testimonials { padding: 4rem 0; }
+  }
+</style>

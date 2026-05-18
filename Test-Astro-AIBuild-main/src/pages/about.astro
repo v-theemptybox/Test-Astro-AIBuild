@@ -2,36 +2,378 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import content from '../data/site-content.json';
 const { title, description, heading, subtitle } = content.about;
+
+const comparisons = [
+  ['Chi phí hosting', 'Miễn phí', '200.000 – 500.000đ/tháng'],
+  ['Server PHP', 'Không cần', 'Bắt buộc'],
+  ['Cập nhật bảo mật', 'Tự động', 'Thủ công hàng tuần'],
+  ['Tốc độ tải trang', '< 1 giây', '2 – 5 giây'],
+  ['Bảo trì plugin', 'Không có', 'Thường xuyên'],
+  ['Chi phí duy trì/năm', '~0đ', '2 – 6 triệu đồng'],
+];
 ---
 <BaseLayout title={title} description={description}>
-  <section>
-    <p class="badge">AI-Built Veterinary Websites</p>
-    <h1>{heading}</h1>
-    <p class="section-sub">{subtitle}</p>
-    <div class="grid-2">
-      <div class="card">
-        <h2>AI thiết kế nhanh</h2>
-        <p>Sử dụng AI để tạo cấu trúc nội dung, văn bản quảng cáo và layout phù hợp với dịch vụ thú y, giúp rút ngắn thời gian triển khai.</p>
-      </div>
-      <div class="card">
-        <h2>Host miễn phí</h2>
-        <p>Cloudflare Pages cung cấp hosting tĩnh miễn phí, hạn chế mọi chi phí hạ tầng cho website phòng khám.</p>
-      </div>
-    </div>
 
-    <div class="card feature">
-      <h3>Điểm khác biệt so với website WordPress truyền thống</h3>
-      <ul class="info-list">
-        <li>Không cần server PHP hoặc cơ sở dữ liệu.</li>
-        <li>Không liên tục cập nhật plugin hoặc vá lỗi bảo mật.</li>
-        <li>Tốc độ tải nhanh, phù hợp với khách hàng truy cập từ điện thoại.</li>
-        <li>Chi phí duy trì bằng 0 khi deploy trên Cloudflare Pages.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Phù hợp với khách hàng mới</h2>
-      <p>Website AI-built là lựa chọn tốt cho các phòng khám thú y mới bắt đầu, cần xuất hiện chuyên nghiệp nhanh chóng và tiết kiệm ngân sách.</p>
+  <!-- Page Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="tag">AI-Built Veterinary Websites</div>
+      <h1>{heading}</h1>
+      <p>{subtitle}</p>
     </div>
   </section>
+
+  <div class="about-body">
+    <div class="container">
+
+      <!-- Value props -->
+      <div class="value-grid">
+        <div class="value-card vc-green">
+          <div class="vc-icon">⚡</div>
+          <h3>AI thiết kế nhanh</h3>
+          <p>Sử dụng AI để tạo cấu trúc nội dung, văn bản quảng cáo và layout phù hợp với dịch vụ thú y — rút ngắn thời gian triển khai từ tuần xuống còn ngày.</p>
+        </div>
+        <div class="value-card vc-blue">
+          <div class="vc-icon">☁️</div>
+          <h3>Host miễn phí</h3>
+          <p>Cloudflare Pages cung cấp hosting tĩnh toàn cầu miễn phí, đảm bảo website tải nhanh ở mọi nơi mà không phát sinh bất kỳ chi phí hạ tầng nào.</p>
+        </div>
+        <div class="value-card vc-amber">
+          <div class="vc-icon">🔒</div>
+          <h3>Bảo mật cao</h3>
+          <p>Không có server PHP, không có database public — giảm thiểu bề mặt tấn công. Cloudflare bảo vệ website 24/7 khỏi DDoS và các mối đe dọa mạng.</p>
+        </div>
+        <div class="value-card vc-purple">
+          <div class="vc-icon">📈</div>
+          <h3>Hiệu suất cao</h3>
+          <p>Điểm PageSpeed 95+ trên cả mobile lẫn desktop. Tốc độ tải nhanh cải thiện SEO và giảm tỷ lệ thoát trang trên điện thoại di động.</p>
+        </div>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="compare-section">
+        <div class="compare-header-text">
+          <h2>So sánh với website WordPress truyền thống</h2>
+          <p>Cùng kết quả, chi phí thấp hơn và ít đau đầu hơn</p>
+        </div>
+        <div class="compare-table">
+          <div class="compare-thead">
+            <div class="ct-feature"></div>
+            <div class="ct-ai">✅ AI-Built (Astro + Cloudflare)</div>
+            <div class="ct-wp">WordPress truyền thống</div>
+          </div>
+          {comparisons.map(([feature, ai, wp]) => (
+            <div class="compare-row">
+              <div class="ct-feature">{feature}</div>
+              <div class="ct-ai ai-val">✓ {ai}</div>
+              <div class="ct-wp wp-val">{wp}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Who it's for -->
+      <div class="for-section">
+        <div class="for-image">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=540&fit=crop" alt="Phòng khám thú y hiện đại" loading="lazy" />
+        </div>
+        <div class="for-content">
+          <span class="section-label">Đối tượng phù hợp</span>
+          <h2>Giải pháp lý tưởng cho ai?</h2>
+          <ul class="for-list">
+            <li>
+              <span class="for-check">✓</span>
+              <div>
+                <strong>Phòng khám mới khai trương</strong>
+                <p>Cần website chuyên nghiệp nhanh chóng để quảng bá dịch vụ và thu hút khách hàng đầu tiên.</p>
+              </div>
+            </li>
+            <li>
+              <span class="for-check">✓</span>
+              <div>
+                <strong>Phòng khám muốn nâng cấp website cũ</strong>
+                <p>Website WordPress chạy chậm, tốn kém bảo trì — muốn chuyển sang giải pháp hiện đại và nhẹ nhàng hơn.</p>
+              </div>
+            </li>
+            <li>
+              <span class="for-check">✓</span>
+              <div>
+                <strong>Chủ phòng khám tiết kiệm ngân sách</strong>
+                <p>Không muốn chi hàng triệu mỗi năm cho hosting và bảo trì, ưu tiên đầu tư vào trang thiết bị và đội ngũ.</p>
+              </div>
+            </li>
+            <li>
+              <span class="for-check">✓</span>
+              <div>
+                <strong>Chuỗi phòng khám đa chi nhánh</strong>
+                <p>Cần hệ thống CMS quản lý nội dung tập trung cho nhiều chi nhánh với chi phí cố định thấp.</p>
+              </div>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Tư vấn miễn phí →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA strip -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>Sẵn sàng bắt đầu dự án?</h2>
+      <p>Liên hệ ngay để nhận tư vấn miễn phí và báo giá triển khai website AI-built cho phòng khám của bạn.</p>
+      <div class="about-cta-btns">
+        <a href="/contact" class="btn btn-white">Liên hệ ngay →</a>
+        <a href="tel:0900123456" class="btn about-cta-phone">📞 0900 123 456</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 60%, #ecfdf5 100%);
+    padding: 5.5rem 0 4.5rem;
+    text-align: center;
+  }
+
+  .about-hero .tag { margin: 0 auto 1.5rem; }
+
+  .about-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    color: #0f172a;
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+    color: #475569;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .about-body {
+    padding: 5.5rem 0 6rem;
+  }
+
+  /* Value grid */
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 5.5rem;
+  }
+
+  .value-card {
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    border: 1px solid transparent;
+  }
+
+  .vc-green { background: #ecfdf5; border-color: #a7f3d0; }
+  .vc-blue  { background: #eff6ff; border-color: #bfdbfe; }
+  .vc-amber { background: #fffbeb; border-color: #fde68a; }
+  .vc-purple { background: #faf5ff; border-color: #e9d5ff; }
+
+  .vc-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+  .value-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    color: #1e293b;
+  }
+
+  .value-card p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  /* Compare */
+  .compare-section { margin-bottom: 5.5rem; }
+
+  .compare-header-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .compare-header-text h2 { font-size: clamp(1.7rem, 2.5vw, 2.3rem); margin-bottom: 0.5rem; }
+  .compare-header-text p { color: #64748b; }
+
+  .compare-table {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: var(--shadow);
+  }
+
+  .compare-thead {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-thead div {
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .compare-thead .ct-ai { color: #059669; }
+  .compare-thead .ct-wp { color: #64748b; }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+  }
+
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row:hover { background: #f8fafc; }
+
+  .ct-feature, .ai-val, .wp-val {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    align-self: center;
+  }
+
+  .ct-feature { color: #374151; font-weight: 500; }
+  .ai-val { color: #059669; font-weight: 600; }
+  .wp-val { color: #94a3b8; }
+
+  /* For section */
+  .for-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .for-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+  }
+
+  .for-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .for-content h2 { font-size: clamp(1.8rem, 2.5vw, 2.3rem); }
+
+  .for-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .for-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .for-check {
+    width: 24px;
+    height: 24px;
+    background: #d1fae5;
+    color: #059669;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .for-list strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+  }
+
+  .for-list p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  /* CTA strip */
+  .about-cta {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  .about-cta h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .about-cta-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about-cta-phone {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .about-cta-phone:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .for-section { grid-template-columns: 1fr; }
+    .for-image { display: none; }
+    .compare-thead, .compare-row {
+      grid-template-columns: 1.5fr 1fr 1fr;
+    }
+    .about-body { padding: 3.5rem 0 4rem; }
+    .value-grid { margin-bottom: 3.5rem; }
+    .compare-section { margin-bottom: 3.5rem; }
+  }
+
+  @media (max-width: 640px) {
+    .value-grid { grid-template-columns: 1fr; }
+    .compare-thead div, .ct-feature, .ai-val, .wp-val {
+      padding: 0.75rem 1rem;
+      font-size: 0.825rem;
+    }
+  }
+</style>
