@@ -27,7 +27,7 @@ const storage = isCloudflare
     });
 
 export default defineConfig({
-  output: "server",
+  output: isCloudflare ? "server" : "static",
   site: "https://your-cloudflare-pages-site.pages.dev",
 
   markdown: {
@@ -41,7 +41,7 @@ export default defineConfig({
     }),
   ],
 
-  adapter: cloudflare(),
+  adapter: isCloudflare ? cloudflare() : undefined,
 
   vite: {
     ssr: {
