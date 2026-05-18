@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Vet AI Clinic | Phòng khám thú y hiện đại",
+    "description": "Trang nhà cho phòng khám thú y AI-built, host trên Cloudflare và quản lý nội dung bằng Cloudflare Emdash.",
+    "heroTitle": "Chăm sóc thú cưng của bạn với tình yêu và chuyên môn",
+    "heroDescription": "Chúng tôi cung cấp dịch vụ khám chữa bệnh, tiêm chủng và chăm sóc toàn diện cho chó mèo với công nghệ hiện đại và đội ngũ bác sĩ giàu kinh nghiệm.",
+    "heroPrimary": "Đặt lịch khám",
+    "heroSecondary": "Tìm hiểu thêm"
+  },
+  "about": {
+    "title": "Giới thiệu | Vet AI Clinic",
+    "description": "Chiến lược AI-built website cho phòng khám thú y và lợi ích khi deploy trên Cloudflare Pages.",
+    "heading": "Giới thiệu về chiến lược website AI-built cho phòng khám thú y",
+    "subtitle": "Một cách tiếp cận mới giúp giảm chi phí hosting, tăng tốc độ và nâng cao trải nghiệm khách hàng."
+  },
+  "contact": {
+    "title": "Liên hệ | Vet AI Clinic",
+    "description": "Liên hệ với Vet AI để triển khai website phòng khám thú y AI-built và host miễn phí trên Cloudflare.",
+    "heading": "Liên hệ với Vet AI Clinic",
+    "subtitle": "Gửi yêu cầu, đặt lịch tư vấn giải pháp website phòng khám thú y AI-built và triển khai Cloudflare Pages.",
+    "email": "hello@vetai.example",
+    "phone": "0900 123 456",
+    "address": "123 Đường Thú Y, Quận 1, TP. Hồ Chí Minh",
+    "formAction": "https://formspree.io/f/mvzvdyag"
+  }
+}

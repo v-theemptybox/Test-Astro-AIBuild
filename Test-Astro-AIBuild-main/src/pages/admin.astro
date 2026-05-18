@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Cloudflare Emdash Admin" description="Truy cập giao diện quản trị Emdash cho website này.">
+  <head>
+    <meta http-equiv="refresh" content="0;url=/_emdash/admin" />
+  </head>
+  <section>
+    <p class="badge">Emdash CMS</p>
+    <h1>Truy cập quản trị Emdash</h1>
+    <p class="section-sub">Bạn sẽ được chuyển ngay tới giao diện admin của Emdash. Nếu không tự động chuyển, nhấn vào nút bên dưới.</p>
+    <div class="card feature">
+      <h2>Đi tới Emdash Admin</h2>
+      <a class="button button-primary" href="/_emdash/admin">Mở Emdash Admin</a>
+      <p>Nếu cần, hãy đăng nhập bằng tài khoản quản trị được cấu hình trong Emdash.</p>
+    </div>
+    <div class="card">
+      <h2>Ghi chú</h2>
+      <p>Emdash sử dụng SQLite cục bộ trong dev. Với Cloudflare triển khai, bạn sẽ cần cấu hình D1 và R2 để lưu dữ liệu và media.</p>
+    </div>
+  </section>
+</BaseLayout>

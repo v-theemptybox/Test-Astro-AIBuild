@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import content from '../data/site-content.json';
+const { title, description, heroTitle, heroDescription, heroPrimary, heroSecondary } = content.home;
+---
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="badge">🏥 Phòng khám thú y hàng đầu</p>
+      <h1>{heroTitle}</h1>
+      <p>{heroDescription}</p>
+      <div class="hero-buttons">
+        <a class="button button-primary" href="#services">{heroPrimary}</a>
+        <a class="button button-secondary" href="#about">{heroSecondary}</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop&crop=center" alt="Chó mèo vui vẻ tại phòng khám" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Dịch vụ của chúng tôi</h2>
+    <p class="section-sub">Đầy đủ các dịch vụ chăm sóc sức khỏe cho thú cưng</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop&crop=center" alt="Khám bệnh tổng quát" loading="lazy">
+        <h3>Khám bệnh tổng quát</h3>
+        <p>Kiểm tra sức khỏe định kỳ, phát hiện sớm bệnh tật cho thú cưng của bạn.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=300&h=200&fit=crop&crop=center" alt="Tiêm chủng" loading="lazy">
+        <h3>Tiêm chủng & Phòng bệnh</h3>
+        <p>Vắc xin đầy đủ theo lịch, bảo vệ thú cưng khỏi các bệnh nguy hiểm.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=300&h=200&fit=crop&crop=center" alt="Phẫu thuật" loading="lazy">
+        <h3>Phẫu thuật & Cấp cứu</h3>
+        <p>Dịch vụ phẫu thuật chuyên nghiệp với trang thiết bị hiện đại.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=300&h=200&fit=crop&crop=center" alt="Chăm sóc lông" loading="lazy">
+        <h3>Chăm sóc & Làm đẹp</h3>
+        <p>Tắm rửa, cắt tỉa lông, chăm sóc da cho chó mèo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <div class="why-content">
+      <h2>Tại sao chọn Vet AI Clinic?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">👨‍⚕️</div>
+          <h3>Bác sĩ chuyên nghiệp</h3>
+          <p>Đội ngũ bác sĩ thú y giàu kinh nghiệm, được đào tạo chuyên sâu.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🩺</div>
+          <h3>Trang thiết bị hiện đại</h3>
+          <p>Máy móc, dụng cụ y tế nhập khẩu, đảm bảo chuẩn đoán chính xác.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">❤️</div>
+          <h3>Tình yêu động vật</h3>
+          <p>Chúng tôi yêu thú cưng và cam kết chăm sóc chúng như thành viên gia đình.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📞</div>
+          <h3>Hỗ trợ 24/7</h3>
+          <p>Tư vấn khẩn cấp và chăm sóc liên tục cho thú cưng của bạn.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=600&fit=crop&crop=center" alt="Bác sĩ thú y chăm sóc chó" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Sẵn sàng chăm sóc thú cưng của bạn?</h2>
+      <p>Liên hệ ngay để đặt lịch khám hoặc nhận tư vấn miễn phí.</p>
+      <div class="cta-buttons">
+        <a class="button button-primary" href="/contact">Liên hệ ngay</a>
+        <a class="button button-secondary" href="tel:0900123456">Gọi hotline</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
