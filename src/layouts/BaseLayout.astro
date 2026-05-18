@@ -1,0 +1,99 @@
+---
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: 'Inter', system-ui, sans-serif;
+        line-height: 1.6;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top, #e0f2fe 0%, #f8fafc 40%, #ffffff 100%); }
+      a { color: #0ea5e9; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      header, main, footer { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+      header { padding: 2.5rem 0 1rem; }
+      footer { padding: 2rem 0 3rem; color: #475569; font-size: 0.95rem; }
+      .badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #e0f2fe; color: #0369a1; border-radius: 999px; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 700; }
+      .nav { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-top: 1.25rem; }
+      .nav a { color: #0f172a; text-decoration: none; padding: 0.75rem 1rem; border-radius: 999px; border: 1px solid transparent; transition: background .2s ease, border-color .2s ease; }
+      .nav a:hover { background: #e0f2fe; border-color: #bae6fd; }
+      .hero { display: grid; gap: 1.5rem; padding: 2rem 0 1rem; }
+      .hero h1 { font-size: clamp(2.6rem, 4vw, 4.2rem); margin: 0; line-height: 1.02; }
+      .hero p { max-width: 44rem; font-size: 1.05rem; color: #334155; }
+      .callout { display: grid; gap: 1rem; background: white; border-radius: 24px; padding: 1.5rem; border: 1px solid #e2e8f0; box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08); }
+      .grid-2 { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .card { background: white; border: 1px solid #e2e8f0; border-radius: 24px; padding: 1.75rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
+      .card h2, .card h3 { margin-top: 0; }
+      .card h2 { font-size: 1.25rem; }
+      .info-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem; }
+      .info-list li { padding-left: 1.15rem; position: relative; color: #334155; }
+      .info-list li::before { content: '✓'; position: absolute; left: 0; color: #0f766e; font-weight: 700; }
+      .feature { display: grid; gap: 1rem; }
+      .feature h3 { margin-bottom: 0.5rem; }
+      .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 999px; padding: 0.95rem 1.4rem; border: none; cursor: pointer; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease; }
+      .button-primary { background: #0ea5e9; color: white; box-shadow: 0 20px 45px rgba(14, 165, 233, 0.18); }
+      .button-secondary { background: white; color: #0f172a; border: 1px solid #cbd5e1; }
+      .button:hover { transform: translateY(-1px); }
+      .section-title { font-size: clamp(1.5rem, 2.2vw, 2rem); margin: 3.5rem 0 1rem; }
+      .section-sub { color: #64748b; max-width: 40rem; margin-bottom: 1.5rem; }
+      .feature-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      .badge-pill { display: inline-flex; padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.88rem; background: #d1fae5; color: #065f46; }
+      .divider { height: 1px; background: #e2e8f0; margin: 2rem 0; border: none; }
+      code { background: #f8fafc; padding: 0.2rem 0.4rem; border-radius: 0.35rem; font-size: 0.95rem; }
+      .hero { display: grid; gap: 2rem; padding: 4rem 0 2rem; align-items: center; background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); border-radius: 0 0 50px 50px; margin-bottom: 4rem; }
+      .hero-content { max-width: 600px; }
+      .hero-image img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+      .services { padding: 4rem 0; background: white; }
+      .services h2 { text-align: center; margin-bottom: 1rem; }
+      .services-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 3rem; }
+      .service-card { background: #f8fafc; border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid #e2e8f0; transition: transform .3s ease, box-shadow .3s ease; }
+      .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+      .service-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 1.5rem; }
+      .service-card h3 { margin-bottom: 1rem; color: #1e293b; }
+      .why-choose { display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; align-items: center; padding: 4rem 0; background: #f8fafc; }
+      .why-content h2 { margin-bottom: 2rem; }
+      .why-grid { display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
+      .why-item { text-align: center; padding: 2rem; background: white; border-radius: 15px; border: 1px solid #e2e8f0; }
+      .why-icon { font-size: 3rem; margin-bottom: 1rem; }
+      .why-item h3 { margin-bottom: 1rem; color: #1e293b; }
+      .why-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+      .cta { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 4rem 0; text-align: center; border-radius: 50px 50px 0 0; margin-top: 4rem; }
+      .cta-content h2 { margin-bottom: 1rem; }
+      .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+      @media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr; align-items: center; } }
+      @media (max-width: 640px) { header { padding-top: 1.5rem; } .hero h1 { font-size: 2.5rem; } .why-choose { grid-template-columns: 1fr; } .services-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="badge">VetAI Studio</div>
+      <nav class="nav">
+        <a href="/">Trang chủ</a>
+        <a href="/#services">Dịch vụ</a>
+        <a href="/#strategy">Chiến lược AI</a>
+        <a href="/about">Giới thiệu</a>
+        <a href="/contact">Liên hệ</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Website animal care AI-built, triển khai Cloudflare Pages miễn phí. Thiết kế cho khách hàng mới của phòng khám thú y.</p>
+    </footer>
+  </body>
+</html>
